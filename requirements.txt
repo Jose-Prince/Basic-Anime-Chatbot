@@ -18,4 +18,5 @@ pinecone
 beautifulsoup4
 altair<5
 streamlit
+streamlit_chat
 beautifulsoup4
