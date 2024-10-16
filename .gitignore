@@ -10,7 +10,7 @@ __pycache__/
 myenv/
 
 #Documents
-anilist-docs/anilist.co/
+anilist-docs/
 
 # Distribution / packaging
 .Python

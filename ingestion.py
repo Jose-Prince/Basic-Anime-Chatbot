@@ -46,7 +46,7 @@ def load_documents(directory_path):
 
 # Función para procesar y cargar documentos en Pinecone
 def ingest_docs():
-    directory_path = "mal-docs/myanimelist.net/anime"  # Ruta base de los archivos
+    directory_path = ""  # Ruta base de los archivos. Modificarla para hacer el ingestion
     raw_documents = load_documents(directory_path)
 
     if not raw_documents:
