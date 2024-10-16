@@ -1,102 +1,104 @@
+Here’s the translation of your text into English:
+
 # Anime Otaku Helper Bot
 
-Este proyecto es un asistente conversacional impulsado por inteligencia artificial que proporciona respuestas relacionadas con el mundo del anime. Utiliza una base de datos vectorial, Pinecone, para el almacenamiento y recuperación de documentos, y un modelo de lenguaje para responder preguntas de los usuarios en tiempo real. El frontend se ha implementado usando **Streamlit** para la interacción del usuario, mientras que el backend hace uso de **LangChain** para la integración de modelos de lenguaje y **Pinecone** para las búsquedas vectoriales.
+This project is an AI-powered conversational assistant that provides responses related to the world of anime. It uses a vector database, Pinecone, for document storage and retrieval, and a language model to answer user questions in real-time. The frontend is implemented using **Streamlit** for user interaction, while the backend utilizes **LangChain** for integrating language models and **Pinecone** for vector searches.
 
-## Características
-- **Ingestión de datos HTML**: Carga y procesamiento de documentos HTML para extraer y almacenar datos relevantes en Pinecone.
-- **Asistente AI**: Responde preguntas sobre anime usando modelos de lenguaje integrados con Pinecone.
-- **Frontend con Streamlit**: Interfaz simple y fácil de usar para interactuar con el chatbot.
+## Features
+- **HTML Data Ingestion**: Uploading and processing HTML documents to extract and store relevant data in Pinecone.
+- **AI Assistant**: Answers anime-related questions using language models integrated with Pinecone.
+- **Streamlit Frontend**: Simple and user-friendly interface for interacting with the chatbot.
 
-## Demostración
+## Demonstration
 
-En el siguiente video se muestra el funcionamoento del chat:
+In the following video, you can see how the chat works:
 [Anime Chat Bot.webm](https://github.com/user-attachments/assets/2ea9cbc0-d0b3-4864-99c0-64c231d47dbf)
 
-## Requisitos previos
+## Prerequisites
 
-1. **Pinecone API Key**: Necesitas una cuenta de Pinecone y una clave de API para interactuar con la base de datos vectorial.
-2. **OpenAI API Key**: Necesitas una clave de API de OpenAI para generar embeddings y respuestas del modelo de lenguaje.
-3. **Python 3.8+**: Este proyecto está desarrollado en Python, por lo que debes tener instalada una versión compatible.
+1. **Pinecone API Key**: You need a Pinecone account and an API key to interact with the vector database.
+2. **OpenAI API Key**: You need an OpenAI API key to generate embeddings and language model responses.
+3. **Python 3.8+**: This project is developed in Python, so you must have a compatible version installed.
 
-## Instalación
+## Installation
 
-1. Clona este repositorio:
+1. Clone this repository:
 
    ```bash
-   git clone https://github.com/tuusuario/anime-otaku-helper-bot.git
+   git clone https://github.com/yourusername/anime-otaku-helper-bot.git
    cd anime-otaku-helper-bot
    ```
 
-2. Crea y activa un entorno virtual:
+2. Create and activate a virtual environment:
 
    ```bash
    python -m venv venv
-   source venv/bin/activate  # En Windows usa venv\Scripts\activate
+   source venv/bin/activate  # On Windows use venv\Scripts\activate
    ```
 
-3. Instala las dependencias:
+3. Install dependencies:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Crea un archivo `.env` y añade tus claves de API:
+4. Create a `.env` file and add your API keys:
 
    ```bash
-   PINECONE_API_KEY=tu_clave_pinecone
-   OPENAI_API_KEY=tu_clave_openai
-   INDEX_NAME=nombre_de_tu_indice
+   PINECONE_API_KEY=your_pinecone_key
+   OPENAI_API_KEY=your_openai_key
+   INDEX_NAME=your_index_name
    ```
 
-## Ingestión de Documentos
+## Document Ingestion
 
-El archivo `ingestion.py` se encarga de cargar y procesar documentos HTML (específicamente archivos `index.html`) que contienen información relevante sobre animes.
+The `ingestion.py` file is responsible for loading and processing HTML documents (specifically `index.html` files) containing relevant information about anime.
 
-### Ejecución del Script de Ingestión
+### Running the Ingestion Script
 
-Para cargar documentos en Pinecone:
+To load documents into Pinecone:
 
 ```bash
 python ingest_docs.py
 ```
 
-Este script:
-- Recorre un directorio con archivos `index.html`.
-- Extrae el texto de cada archivo HTML usando **BeautifulSoup**.
-- Divide los documentos en fragmentos más pequeños utilizando un **text splitter**.
-- Almacena los fragmentos de texto en Pinecone como vectores.
+This script:
+- Iterates through a directory of `index.html` files.
+- Extracts text from each HTML file using **BeautifulSoup**.
+- Splits the documents into smaller chunks using a **text splitter**.
+- Stores the text chunks in Pinecone as vectors.
 
-## Ejecución del Chat Assistant
+## Running the Chat Assistant
 
-El asistente responde preguntas del usuario en tiempo real. Se conecta a Pinecone para recuperar documentos y utiliza un modelo de lenguaje para generar respuestas contextualizadas.
+The assistant responds to user questions in real-time. It connects to Pinecone to retrieve documents and uses a language model to generate contextualized responses.
 
-### Ejecución del Chat
+### Running the Chat
 
-1. Corre el servidor de **Streamlit** para la interfaz del chatbot:
+1. Run the **Streamlit** server for the chatbot interface:
 
    ```bash
    streamlit run app.py
    ```
 
-2. En tu navegador, accede a la URL `http://localhost:8501` y comienza a interactuar con el asistente.
+2. In your browser, go to `http://localhost:8501` and start interacting with the assistant.
 
-### Funcionalidades del Chat:
-- Responde preguntas relacionadas con anime.
-- Muestra la conversación completa, junto con las fuentes de información extraídas.
+### Chat Features:
+- Answers anime-related questions.
+- Displays the full conversation along with extracted information sources.
 
-## Archivos principales
+## Main Files
 
-- **`ingestion.py`**: Carga y procesa documentos HTML para almacenarlos en Pinecone.
-- **`main.py`**: Interfaz del chatbot usando Streamlit.
-- **`backend/core.py`**: Contiene la lógica principal del asistente, que se conecta a Pinecone y utiliza el modelo de lenguaje.
+- **`ingestion.py`**: Loads and processes HTML documents for storing them in Pinecone.
+- **`main.py`**: Chatbot interface using Streamlit.
+- **`backend/core.py`**: Contains the main assistant logic, connecting to Pinecone and utilizing the language model.
 
-## Tecnologías utilizadas
+## Technologies Used
 
-- **Pinecone**: Base de datos vectorial para búsqueda y almacenamiento de documentos.
-- **OpenAI**: API para generar embeddings y respuestas del modelo de lenguaje.
-- **LangChain**: Framework para construir cadenas de lenguaje utilizando LLMs (Large Language Models).
-- **BeautifulSoup**: Biblioteca para procesar y extraer texto de archivos HTML.
-- **Streamlit**: Framework para crear aplicaciones web interactivas con Python.
+- **Pinecone**: Vector database for document search and storage.
+- **OpenAI**: API for generating embeddings and language model responses.
+- **LangChain**: Framework for building language model chains (LLMs).
+- **BeautifulSoup**: Library for processing and extracting text from HTML files.
+- **Streamlit**: Framework for creating interactive web apps with Python.
 
-## Contribución
-Si encuentras algún problema o tienes alguna idea para mejorar este proyecto, siéntete libre de abrir un **issue** o hacer un **pull request**.
+## Contribution
+If you encounter any issues or have ideas to improve this project, feel free to open an **issue** or submit a **pull request**.
