@@ -9,6 +9,9 @@ __pycache__/
 #virtual env
 myenv/
 
+#Documents
+anilist-docs/anilist.co/
+
 # Distribution / packaging
 .Python
 build/

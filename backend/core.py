@@ -11,12 +11,10 @@ from langchain_community.vectorstores import Pinecone as PineconeLangChain
 
 load_dotenv()
 
-# Inicializar Pinecone con la nueva forma
 pc = Pinecone(
     api_key=os.environ["PINECONE_API_KEY"]
 )
 
-# Definir la función
 def run_llm(query: str, chat_history: List[Dict[str, Any]]=[]) -> Any:
     # Crear las embeddings
     embeddings = OpenAIEmbeddings()
@@ -60,6 +58,5 @@ def run_llm(query: str, chat_history: List[Dict[str, Any]]=[]) -> Any:
 
     return new_result
 
-# Ejecutar la función si se llama directamente el script
 if __name__ == "__main__":
     print(run_llm(query="What is Chain in LangChain?"))

@@ -46,8 +46,7 @@ if prompt:
         st.session_state["chat_history"].append(("ai", generated_response["result"]))
 
     if st.session_state["chat_answers_history"]:
-        for generated_response, user_query in zip(st.session_state["chat_answers_history"], st.session_state["user_prompt_history"]):
-            st.session_state["user_prompt_history"]
+        for generated_response, user_query in zip(reversed(st.session_state["chat_answers_history"]), reversed(st.session_state["user_prompt_history"])):
             message(user_query, is_user=True)
-            message(generated_response)
+            message(generated_response, avatar_style="big-smile")
 
