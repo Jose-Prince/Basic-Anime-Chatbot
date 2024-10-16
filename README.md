@@ -7,6 +7,11 @@ Este proyecto es un asistente conversacional impulsado por inteligencia artifici
 - **Asistente AI**: Responde preguntas sobre anime usando modelos de lenguaje integrados con Pinecone.
 - **Frontend con Streamlit**: Interfaz simple y fácil de usar para interactuar con el chatbot.
 
+## Demostración
+
+En el siguiente video se muestra el funcionamoento del chat:
+[Anime Chat Bot.webm](https://github.com/user-attachments/assets/2ea9cbc0-d0b3-4864-99c0-64c231d47dbf)
+
 ## Requisitos previos
 
 1. **Pinecone API Key**: Necesitas una cuenta de Pinecone y una clave de API para interactuar con la base de datos vectorial.
