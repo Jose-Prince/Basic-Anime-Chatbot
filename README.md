@@ -54,6 +54,10 @@ In the following video, you can see how the chat works:
 
 The `ingestion.py` file is responsible for loading and processing HTML documents (specifically `index.html` files) containing relevant information about anime.
 
+The documents used for the ingestion are here: [anilist-docs](https://drive.google.com/drive/folders/1KNzgpvprdAXcZHYbsFPXv5Kl4RQXWmkN?usp=drive_link)
+
+If you don't to use the anilist-docs web scrapping you can make your own web-scrapping. Just be sure to add the directory to the source code and add the path of the directory in ingestion.py.
+
 ### Running the Ingestion Script
 
 To load documents into Pinecone:
