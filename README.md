@@ -1,5 +1,3 @@
-Here’s the translation of your text into English:
-
 # Anime Otaku Helper Bot
 
 This project is an AI-powered conversational assistant that provides responses related to the world of anime. It uses a vector database, Pinecone, for document storage and retrieval, and a language model to answer user questions in real-time. The frontend is implemented using **Streamlit** for user interaction, while the backend utilizes **LangChain** for integrating language models and **Pinecone** for vector searches.
